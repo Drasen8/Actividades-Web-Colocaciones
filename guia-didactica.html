@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Didáctica - Colocaciones ELE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .guide-section {
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .guide-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .concept-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .concept-title {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .concept-content {
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .objectives-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .objective-item {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .activity-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .activity-detail {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .activity-detail h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .methodology-box {
+            background: linear-gradient(135deg, #e7f3ff, #f0f4ff);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            margin-top: 20px;
+        }
+        
+        .evaluation-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .evaluation-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        
+        .evaluation-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+            background: white;
+        }
+        
+        .evaluation-table tr:hover td {
+            background: #f8f9fa;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            flex: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .back-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .icon-large {
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .objectives-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header">
+            <h1>📖 Guía Didáctica</h1>
+            <p class="subtitle">Marco teórico y metodológico de la propuesta</p>
+        </header>
+
+        <!-- NOTA ACLARATORIA -->
+        <section class="guide-section" style="background: #fff3cd; border-left: 5px solid #ffc107;">
+            <div style="padding: 20px;">
+                <h3 style="color: #856404; margin-bottom: 15px;">⚠️ Nota aclaratoria</h3>
+                <div style="background: white; padding: 20px; border-radius: 8px; line-height: 1.8; color: #333;">
+                    <p style="margin-bottom: 15px;">
+                        Quiero aclarar que <strong>esta actividad no se ha realizado en grupo</strong>: la he hecho yo solo, de forma individual.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Quería disculparme por esta situación. Estas últimas semanas he tenido muchísimo trabajo y no he podido ver las clases durante aproximadamente semana y media. Por eso me apunté a un grupo creyendo que era el de esta actividad, cuando en realidad pertenecía a otro trabajo de otra asignatura distinta. Tampoco era consciente de que la entrega de esta actividad era hoy. Cuando me di cuenta, ya era tarde para buscar un grupo.
+                    </p>
+                    <p>
+                        Finalmente he tenido que realizar y entregar el trabajo por mi cuenta. Lo siento mucho y asumo cualquier penalización o bajada de nota derivada de no haberlo hecho en grupo. Han sido las circunstancias, pero aun así he intentado preparar un trabajo lo mejor posible, tanto para compensar esta situación como porque puedo utilizarlo en mi propio trabajo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRESENTACIÓN: NIVEL Y DESTINATARIOS -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                🎓 Presentación: Nivel y Destinatarios
+            </h2>
+            
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">👥</span>
+                    <span>Perfil del estudiante</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                        Esta propuesta didáctica está diseñada específicamente para <strong>estudiantes adultos</strong> 
+                        de nivel <strong>B1 de Español como Lengua Extranjera (ELE)</strong> según el Marco Común Europeo 
+                        de Referencia para las Lenguas (MCER).
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <strong>🎯 Características del nivel B1:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>Comprende los puntos principales de textos claros en lengua estándar</li>
+                            <li>Puede desenvolverse en la mayoría de situaciones cotidianas</li>
+                            <li>Produce textos sencillos sobre temas conocidos o de interés personal</li>
+                            <li>Describe experiencias, acontecimientos, deseos y aspiraciones</li>
+                            <li>Justifica brevemente opiniones y explica planes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">💻</span>
+                    <span>Formato de la propuesta</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.1rem;">
+                        Se plantea como una <strong>entrada individual en un blog</strong>, donde los alumnos 
+                        interactúan directamente con el contenido <strong>sin necesidad de descargar documentos</strong>. 
+                        Este formato digital favorece:
+                    </p>
+                    <div class="objectives-list" style="margin-top: 20px;">
+                        <div class="objective-item">
+                            <strong>✅ Accesibilidad inmediata</strong><br>
+                            No requiere instalación ni descarga de archivos
+                        </div>
+                        <div class="objective-item">
+                            <strong>✅ Interactividad</strong><br>
+                            Feedback automático e inmediato
+                        </div>
+                        <div class="objective-item">
+                            <strong>✅ Autonomía del alumno</strong><br>
+                            Trabajo a su propio ritmo
+                        </div>
+                        <div class="objective-item">
+                            <strong>✅ Flexibilidad</strong><br>
+                            Disponible 24/7 desde cualquier dispositivo
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">🎯</span>
+                    <span>Objetivo general</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.2rem; font-weight: 500; color: #333; background: linear-gradient(135deg, #e7f3ff, #f0f4ff); padding: 20px; border-radius: 8px; text-align: center;">
+                        Fomentar el uso <strong>adecuado y natural</strong> del léxico español a través del trabajo 
+                        sistemático con <strong>colocaciones</strong>
+                    </p>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>💡 ¿Qué son las colocaciones?</strong>
+                        <p style="margin-top: 10px;">
+                            Las colocaciones son <strong>combinaciones habituales de palabras</strong> que los hablantes 
+                            nativos utilizan de forma natural. Por ejemplo: "tomar una decisión" (no "hacer una decisión"), 
+                            "cometer un error" (no "hacer un error"), o "salud de hierro" (no "salud de metal").
+                        </p>
+                        <p style="margin-top: 10px;">
+                            Dominar las colocaciones es fundamental para conseguir una expresión más fluida, natural 
+                            y similar a la de los hablantes nativos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OBJETIVOS Y CONTENIDOS -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                🎯 Objetivos y Contenidos
+            </h2>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">📋</span>
+                    <span>Objetivos específicos</span>
+                </div>
+                <div class="concept-content">
+                    <div class="objectives-list">
+                        <div class="objective-item">
+                            <strong>1️⃣ Reconocer y corregir</strong><br>
+                            Identificar colocaciones incorrectas y proponer la forma correcta
+                        </div>
+                        <div class="objective-item">
+                            <strong>2️⃣ Clasificar</strong><br>
+                            Organizar colocaciones según campos léxicos temáticos
+                        </div>
+                        <div class="objective-item">
+                            <strong>3️⃣ Identificar en contexto</strong><br>
+                            Seleccionar colocaciones correctas según la situación comunicativa
+                        </div>
+                        <div class="objective-item">
+                            <strong>4️⃣ Producir textos</strong><br>
+                            Utilizar colocaciones de forma natural en la expresión escrita
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">📚</span>
+                    <span>Contenidos léxicos</span>
+                </div>
+                <div class="concept-content">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 12px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📌 Colocaciones léxicas frecuentes</strong>
+                            <p style="margin-top: 5px; color: #666;">
+                                Verbo + sustantivo (tomar una decisión, hacer preguntas)<br>
+                                Adjetivo + sustantivo (salud de hierro, comida copiosa)<br>
+                                Sustantivo + sustantivo (filete de merluza, cuña de queso)
+                            </p>
+                        </li>
+                        <li style="padding: 12px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #764ba2;">
+                            <strong>📌 Agrupación temática del vocabulario</strong>
+                            <p style="margin-top: 5px; color: #666;">
+                                Sentimientos y sensaciones, salud y cuerpo, alimentación
+                            </p>
+                        </li>
+                        <li style="padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📌 Aplicación contextual</strong>
+                            <p style="margin-top: 5px; color: #666;">
+                                Uso del léxico en situaciones reales de producción textual
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTREZAS TRABAJADAS -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                ✍️ Destrezas Trabajadas
+            </h2>
+
+            <p style="font-size: 1.1rem; margin-bottom: 30px; color: #555;">
+                En esta propuesta didáctica se desarrollan <strong>dos destrezas principales</strong>, 
+                trabajadas de forma integrada y progresiva:
+            </p>
+
+            <div class="skills-grid">
+                <!-- COMPRENSIÓN LECTORA -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        📖 Comprensión Lectora
+                    </div>
+                    <p style="margin-bottom: 20px; color: #555;">
+                        Se trabaja a través de <strong>tres actividades</strong> que requieren diferentes 
+                        niveles de procesamiento léxico:
+                    </p>
+                    
+                    <div class="activity-breakdown">
+                        <div class="activity-detail">
+                            <h4>📝 Actividad 1: Detección de errores</h4>
+                            <p>
+                                El alumno debe <strong>detectar colocaciones incorrectas</strong> en frases escritas. 
+                                Esto exige:
+                            </p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Interpretar el significado global de la frase</li>
+                                <li>Analizar la naturalidad léxica del texto</li>
+                                <li>Activar conocimientos previos sobre colocaciones</li>
+                                <li>Detectar interferencias con la lengua materna</li>
+                            </ul>
+                        </div>
+
+                        <div class="activity-detail">
+                            <h4>🗂️ Actividad 2: Clasificación semántica</h4>
+                            <p>
+                                Al clasificar colocaciones según <strong>campos semánticos</strong> (salud, 
+                                alimentación, sentimientos…), el alumno:
+                            </p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Profundiza en el significado contextual</li>
+                                <li>Establece redes léxicas temáticas</li>
+                                <li>Refuerza la comprensión desde un enfoque léxico</li>
+                                <li>Facilita la memorización en contextos significativos</li>
+                            </ul>
+                        </div>
+
+                        <div class="activity-detail">
+                            <h4>✅ Actividad 3: Discriminación contextual</h4>
+                            <p>
+                                El alumno debe leer frases incompletas y <strong>seleccionar</strong> la colocación 
+                                más adecuada. Esto implica:
+                            </p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Comprensión inferencial del contexto</li>
+                                <li>Sensibilidad semántica y léxica</li>
+                                <li>Reconocimiento de combinaciones naturales</li>
+                                <li>Descarte de opciones incorrectas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPRESIÓN ESCRITA -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        ✏️ Expresión Escrita
+                    </div>
+                    <p style="margin-bottom: 20px; color: #555;">
+                        Se desarrolla en la <strong>Actividad 4</strong>, como culminación del proceso 
+                        de aprendizaje:
+                    </p>
+                    
+                    <div class="activity-breakdown">
+                        <div class="activity-detail">
+                            <h4>📖 Actividad 4: Producción textual</h4>
+                            <p>
+                                El alumno redacta un <strong>texto libre tipo diario</strong> integrando al menos 
+                                cinco colocaciones trabajadas previamente.
+                            </p>
+                            
+                            <div style="margin-top: 15px; padding: 12px; background: #e7f3ff; border-radius: 6px;">
+                                <strong>🎯 Objetivos de producción:</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li>Aplicar el léxico en contexto comunicativo real</li>
+                                    <li>Integrar colocaciones de forma natural</li>
+                                    <li>Fomentar la corrección léxica</li>
+                                    <li>Enriquecer la expresión escrita</li>
+                                    <li>Personalizar el aprendizaje</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 6px; border-left: 3px solid #ffc107;">
+                                <strong>📏 Criterios de producción:</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li><strong>Extensión:</strong> 100-150 palabras</li>
+                                    <li><strong>Colocaciones:</strong> Mínimo 5 trabajadas</li>
+                                    <li><strong>Formato:</strong> Diario personal</li>
+                                    <li><strong>Tema:</strong> Libre (real o inventado)</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 15px; padding: 12px; background: #c8e6c9; border-radius: 6px;">
+                                <strong>✅ Beneficios:</strong>
+                                <p style="margin-top: 8px;">
+                                    Este ejercicio permite <strong>consolidar el aprendizaje</strong> en una 
+                                    producción significativa y personalizada, cerrando el ciclo de 
+                                    reconocimiento → clasificación → aplicación.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIEMPO ESTIMADO -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                ⏱️ Tiempo Estimado y Distribución
+            </h2>
+
+            <div class="concept-box">
+                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px; margin-bottom: 30px;">
+                    <div style="font-size: 3rem; font-weight: bold;">60 minutos</div>
+                    <div style="font-size: 1.2rem;">Duración total de la propuesta</div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">10'</div>
+                        <div class="timeline-content">
+                            <h3>Actividad 1: Corrección de colocaciones</h3>
+                            <p>Identificación y corrección de 8 frases con colocaciones incorrectas</p>
+                            <span style="color: #667eea; font-weight: bold;">⚡ Ritmo: ~1.25 min por frase</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">10'</div>
+                        <div class="timeline-content">
+                            <h3>Actividad 2: Clasificación temática</h3>
+                            <p>Organización de 9 colocaciones en 3 categorías mediante drag & drop</p>
+                            <span style="color: #667eea; font-weight: bold;">⚡ Ritmo: ~1 min por colocación + verificación</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">10'</div>
+                        <div class="timeline-content">
+                            <h3>Actividad 3: Completar frases</h3>
+                            <p>Selección de colocaciones correctas en 8 preguntas de opción múltiple</p>
+                            <span style="color: #667eea; font-weight: bold;">⚡ Ritmo: ~1.25 min por pregunta</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">30'</div>
+                        <div class="timeline-content">
+                            <h3>Actividad 4: Producción escrita (diario)</h3>
+                            <p>Redacción de un texto de 100-150 palabras con al menos 5 colocaciones</p>
+                            <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px;">
+                                <strong>Fases:</strong>
+                                <ul style="margin-left: 20px; margin-top: 5px;">
+                                    <li>5 min - Planificación y selección de colocaciones</li>
+                                    <li>15 min - Redacción del texto</li>
+                                    <li>5 min - Revisión y verificación</li>
+                                    <li>5 min - Corrección y mejora</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <strong>💡 Nota pedagógica:</strong> Los tiempos son orientativos y pueden variar según el 
+                    ritmo individual de cada estudiante. La plataforma permite trabajo autónomo sin límite de tiempo.
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGÍA Y MATERIALES -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                🔬 Metodología y Materiales
+            </h2>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">🎓</span>
+                    <span>Enfoque metodológico</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        La metodología se basa en un <strong>enfoque comunicativo y reflexivo</strong>, 
+                        centrado en el alumno como protagonista de su aprendizaje.
+                    </p>
+
+                    <div class="methodology-box">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">Principios metodológicos:</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>🔄 Aprendizaje inductivo</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    El alumno descubre las reglas a partir de ejemplos concretos
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>👤 Autonomía</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    Trabajo individual a su propio ritmo
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>💭 Reflexión léxica</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    Análisis consciente de las colocaciones
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>✅ Feedback inmediato</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    Corrección automática tras cada respuesta
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>🔗 Contextualización</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    Uso de colocaciones en situaciones reales
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <strong>📈 Progresión gradual</strong>
+                                <p style="margin-top: 8px; color: #666;">
+                                    De la recepción a la producción
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span class="icon-large">💼</span>
+                    <span>Materiales y recursos</span>
+                </div>
+                <div class="concept-content">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 15px; margin-bottom: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>✅ Sin documentos anexos</strong>
+                            <p style="margin-top: 8px; color: #666;">
+                                Todo el contenido está integrado directamente en la entrada del blog. 
+                                No se requiere descargar PDFs ni documentos externos.
+                            </p>
+                        </li>
+                        <li style="padding: 15px; margin-bottom: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #764ba2;">
+                            <strong>✅ Sin enlaces de descarga</strong>
+                            <p style="margin-top: 8px; color: #666;">
+                                El alumno trabaja exclusivamente en la interfaz web, favoreciendo 
+                                la interactividad y la inmediatez.
+                            </p>
+                        </li>
+                        <li style="padding: 15px; margin-bottom: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>✅ Interfaz intuitiva</strong>
+                            <p style="margin-top: 8px; color: #666;">
+                                Diseño claro y atractivo que facilita la navegación y reduce la carga cognitiva.
+                            </p>
+                        </li>
+                        <li style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #764ba2;">
+                            <strong>✅ Acceso multiplataforma</strong>
+                            <p style="margin-top: 8px; color: #666;">
+                                Compatible con ordenadores, tablets y smartphones, permitiendo flexibilidad 
+                                en el lugar y momento de estudio.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <strong>🎯 Ventaja clave:</strong> Este formato digital permite al alumno trabajar 
+                        de forma completamente autónoma, recibiendo feedback inmediato sin necesidad de 
+                        intervención del profesor, lo que favorece el aprendizaje autorregulado.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESARROLLO Y EXPLICACIÓN -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                📝 Desarrollo y Explicación de la Propuesta
+            </h2>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span>📝 Actividad 1: Corrección de colocaciones</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
+                        El alumno se enfrenta a una serie de <strong>frases con colocaciones incorrectas</strong>. 
+                        Su tarea consiste en reconocer el error y corregirlo.
+                    </p>
+                    
+                    <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <strong style="color: #667eea;">🎯 Objetivos específicos:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Activar conocimientos previos sobre colocaciones</li>
+                            <li>Detectar interferencias con la lengua materna</li>
+                            <li>Desarrollar sensibilidad hacia el uso natural del español</li>
+                            <li>Asentar una base sólida en el uso léxico correcto</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <strong>💡 Valor didáctico:</strong> Se trata de un <strong>primer paso fundamental</strong> 
+                        para asentar una base sólida en el uso natural del léxico español. La corrección de errores 
+                        permite al alumno confrontar sus hipótesis con el uso real de la lengua.
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span>🗂️ Actividad 2: Clasificación temática</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
+                        El estudiante debe <strong>organizar una lista de colocaciones</strong> según diferentes 
+                        temas léxicos: emociones, salud, trabajo, clima, etc.
+                    </p>
+                    
+                    <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <strong style="color: #667eea;">🎯 Objetivos específicos:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Reforzar la comprensión semántica</li>
+                            <li>Establecer redes léxicas y conexiones temáticas</li>
+                            <li>Facilitar la memorización en contextos significativos</li>
+                            <li>Desarrollar estrategias de organización mental del vocabulario</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <strong>💡 Valor didáctico:</strong> La clasificación temática ayuda al cerebro a 
+                        <strong>crear asociaciones significativas</strong>, lo que facilita tanto la comprensión 
+                        como la recuperación posterior del vocabulario en situaciones comunicativas reales.
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span>✅ Actividad 3: Discriminación contextual</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
+                        El alumno debe <strong>completar una serie de frases</strong> eligiendo la colocación 
+                        adecuada entre varias opciones. 
+                    </p>
+                    
+                    <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <strong style="color: #667eea;">🎯 Procesos cognitivos implicados:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Interpretar el contexto de la frase</li>
+                            <li>Reconocer la opción natural en español</li>
+                            <li>Descartar opciones incorrectas o poco naturales</li>
+                            <li>Afinar la comprensión del uso léxico correcto</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <strong>💡 Valor didáctico:</strong> Se trabajan <strong>estructuras comunes</strong> 
+                        y se amplía la sensibilidad ante combinaciones fijas de palabras, preparando al alumno 
+                        para la fase de producción activa.
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">
+                    <span>📖 Actividad 4: Producción escrita (diario personal)</span>
+                </div>
+                <div class="concept-content">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
+                        Como <strong>tarea final</strong>, se propone al alumno redactar un texto breve en formato 
+                        diario (100-150 palabras), en el que debe incorporar al menos cinco colocaciones aprendidas 
+                        durante la propuesta.
+                    </p>
+                    
+                    <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <strong style="color: #667eea;">🎯 Características de la tarea:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>Formato:</strong> Diario personal (género familiar y personal)</li>
+                            <li><strong>Extensión:</strong> 100-150 palabras (controlada pero flexible)</li>
+                            <li><strong>Requisito:</strong> Mínimo 5 colocaciones trabajadas</li>
+                            <li><strong>Tema:</strong> Libre (real o inventado)</li>
+                            <li><strong>Feedback:</strong> Automático sobre extensión y uso de colocaciones</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #c8e6c9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <strong style="color: #2e7d32;">✅ Beneficios pedagógicos:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Permite integrar <strong>activamente</strong> el léxico trabajado</li>
+                            <li>Consolida el aprendizaje en una producción significativa</li>
+                            <li>Personaliza el aprendizaje (tema libre, experiencias propias)</li>
+                            <li>Cierra el ciclo: recepción → comprensión → producción</li>
+                            <li>Fomenta la creatividad dentro de parámetros controlados</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <strong>💡 Valor didáctico:</strong> Este ejercicio permite al alumno 
+                        <strong>transferir el conocimiento receptivo a productivo</strong>, consolidando 
+                        el aprendizaje mediante la aplicación práctica en un contexto comunicativo auténtico.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVALUACIÓN -->
+        <section class="guide-section">
+            <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 30px;">
+                📊 Evaluación
+            </h2>
+
+            <div class="concept-box">
+                <p style="font-size: 1.1rem; margin-bottom: 25px; color: #555;">
+                    La evaluación es <strong>continua, formativa y automática</strong>. Cada actividad 
+                    proporciona feedback inmediato que permite al alumno autorregular su aprendizaje.
+                </p>
+
+                <table class="evaluation-table">
+                    <thead>
+                        <tr>
+                            <th>Actividad</th>
+                            <th>Objetivo evaluado</th>
+                            <th>Indicador de logro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Actividad 1</strong><br>Corrección</td>
+                            <td>Reconocer colocaciones incorrectas</td>
+                            <td>Capacidad para identificar y corregir errores léxicos con precisión</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actividad 2</strong><br>Clasificación</td>
+                            <td>Clasificar colocaciones por temas</td>
+                            <td>Organización adecuada y coherente según campos semánticos establecidos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actividad 3</strong><br>Discriminación</td>
+                            <td>Identificar colocaciones en contexto</td>
+                            <td>Elección correcta de colocaciones en frases incompletas según el contexto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actividad 4</strong><br>Producción</td>
+                            <td>Producir un texto con colocaciones</td>
+                            <td>Integración natural y precisa del léxico en la producción escrita personal</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; border-left: 4px solid #667eea;">
+                        <strong style="color: #667eea; font-size: 1.1rem;">📈 Evaluación formativa</strong>
+                        <p style="margin-top: 10px; color: #555;">
+                            El feedback inmediato permite al alumno identificar sus errores y corregirlos 
+                            en el momento, favoreciendo un aprendizaje más efectivo.
+                        </p>
+                    </div>
+
+                    <div style="background: #c8e6c9; padding: 20px; border-radius: 10px; border-left: 4px solid #2e7d32;">
+                        <strong style="color: #2e7d32; font-size: 1.1rem;">🎯 Autoevaluación</strong>
+                        <p style="margin-top: 10px; color: #555;">
+                            El alumno puede ver su progreso y puntuación en cada actividad, 
+                            desarrollando autonomía y responsabilidad sobre su aprendizaje.
+                        </p>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                        <strong style="color: #856404; font-size: 1.1rem;">🔄 Repetición ilimitada</strong>
+                        <p style="margin-top: 10px; color: #555;">
+                            El formato digital permite al alumno repetir las actividades cuantas veces 
+                            necesite hasta alcanzar el dominio deseado.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <strong>💡 Nota importante:</strong> Aunque la corrección es automática, se recomienda 
+                    que el profesor revise el texto del diario (Actividad 4) para proporcionar feedback 
+                    cualitativo adicional sobre aspectos como coherencia, cohesión y uso contextual 
+                    de las colocaciones.
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSIÓN -->
+        <section class="guide-section">
+            <div class="concept-box" style="background: linear-gradient(135deg, #e7f3ff, #f0f4ff); border: 2px solid #667eea;">
+                <h2 style="color: #667eea; text-align: center; margin-bottom: 20px;">
+                    🎓 Conclusión
+                </h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; color: #555;">
+                    Esta propuesta didáctica integra <strong>teoría y práctica</strong> de forma coherente, 
+                    ofreciendo al estudiante de nivel B1 una experiencia de aprendizaje <strong>completa, 
+                    autónoma e interactiva</strong> centrada en el dominio de las colocaciones léxicas, 
+                    elemento fundamental para conseguir una expresión natural y fluida en español.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="index.html" style="display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                        🚀 Ir a las actividades
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="blog-footer">
+            <p>📚 Guía Didáctica - Colocaciones ELE Nivel B1</p>
+            <p><small>Documento metodológico y de referencia para docentes y estudiantes</small></p>
+        </footer>
+    </div>
+
+    <a href="index.html" class="back-button">
+        ← Volver a las actividades
+    </a>
+</body>
+</html>

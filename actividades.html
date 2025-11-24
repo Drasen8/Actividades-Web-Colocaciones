@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - Colocaciones ELE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header">
+            <h1>🎯 Actividades con colocaciones</h1>
+            <p class="subtitle">Nivel B1 - Español como Lengua Extranjera</p>
+            <div style="margin-top: 25px;">
+                <a href="index.html" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.2rem; border: 3px solid white; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 10px;" onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='translateY(0)'">
+                    🏠 Volver al inicio
+                </a>
+                <a href="guia-didactica.html" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.2rem; border: 3px solid white; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 10px;" onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='translateY(0)'">
+                    📖 Ver Guía Didáctica
+                </a>
+            </div>
+        </header>
+
+        <!-- ACTIVIDAD 1 -->
+        <section class="activity" id="actividad1">
+            <div class="activity-header">
+                <h2>📝 Actividad 1 – Corrige las colocaciones incorrectas</h2>
+                <span class="timer">⏱️ 10 minutos</span>
+            </div>
+            <p class="instructions">Lee las siguientes frases y corrige las colocaciones incorrectas usando las palabras del banco de palabras.</p>
+            
+            <div class="word-bank">
+                <h4>Banco de palabras:</h4>
+                <div class="words">
+                    <span class="word-chip">copiosa</span>
+                    <span class="word-chip">helado</span>
+                    <span class="word-chip">toca</span>
+                    <span class="word-chip">hierro</span>
+                    <span class="word-chip">cielo</span>
+                    <span class="word-chip">calmar</span>
+                    <span class="word-chip">mantenerse</span>
+                    <span class="word-chip">altamente</span>
+                </div>
+            </div>
+
+            <div class="sentences-list">
+                <div class="sentence-item" data-index="0">
+                    <p class="original">Hace calor, va a beber un vaso para <span class="incorrect">frenar</span> la sed.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(0)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="1">
+                    <p class="original">Mi primo <span class="incorrect">juega</span> bien la guitarra.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(1)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="2">
+                    <p class="original">Ha estudiado carrera y máster, está <span class="incorrect">fuertemente</span> cualificado.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(2)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="3">
+                    <p class="original">Nunca enferma, tiene una salud de <span class="incorrect">metal</span>.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(3)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="4">
+                    <p class="original">No debes conducir después de una comida <span class="incorrect">grandiosa</span>.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(4)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="5">
+                    <p class="original">Lo he notado totalmente en el <span class="incorrect">techo</span> de la boca.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(5)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="6">
+                    <p class="original">Hay que <span class="incorrect">sujetarse</span> informado sobre lo que pasa en el mundo.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(6)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+
+                <div class="sentence-item" data-index="7">
+                    <p class="original">Cuando me lo dijo me quedé <span class="incorrect">congelado</span>.</p>
+                    <div class="correction-input">
+                        <label>Tu corrección:</label>
+                        <input type="text" class="input-correction" placeholder="Escribe la palabra correcta">
+                        <button class="btn-check" onclick="checkCorrection(7)">Verificar</button>
+                        <span class="feedback"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-summary">
+                <p>Respuestas correctas: <span id="score1">0</span> / 8</p>
+            </div>
+        </section>
+
+        <!-- ACTIVIDAD 2 -->
+        <section class="activity" id="actividad2">
+            <div class="activity-header">
+                <h2>🗂️ Actividad 2 – Clasifica las colocaciones por tema</h2>
+                <span class="timer">⏱️ 10 minutos</span>
+            </div>
+            <p class="instructions">Arrastra cada colocación al tema correspondiente.</p>
+
+            <div class="classification-container">
+                <div class="collocations-pool" id="collocationsPool">
+                    <h4>Colocaciones:</h4>
+                    <div class="draggable-items">
+                        <div class="draggable-item" draggable="true" data-collocation="tener fiebre" data-category="salud">Tener fiebre</div>
+                        <div class="draggable-item" draggable="true" data-collocation="estar bajo presión" data-category="sentimientos">Estar bajo presión</div>
+                        <div class="draggable-item" draggable="true" data-collocation="sentir vergüenza" data-category="sentimientos">Sentir vergüenza</div>
+                        <div class="draggable-item" draggable="true" data-collocation="pasar frío" data-category="sentimientos">Pasar frío</div>
+                        <div class="draggable-item" draggable="true" data-collocation="coger una gripe" data-category="salud">Coger una gripe</div>
+                        <div class="draggable-item" draggable="true" data-collocation="tener miedo" data-category="sentimientos">Tener miedo</div>
+                        <div class="draggable-item" draggable="true" data-collocation="un filete de merluza" data-category="alimentacion">Un filete de merluza</div>
+                        <div class="draggable-item" draggable="true" data-collocation="un chusco de pan" data-category="alimentacion">Un chusco de pan</div>
+                        <div class="draggable-item" draggable="true" data-collocation="una cuña de queso" data-category="alimentacion">Una cuña de queso</div>
+                    </div>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-box" data-category="sentimientos">
+                        <h4>😊 Sentimientos o sensaciones</h4>
+                        <div class="drop-zone" data-category="sentimientos"></div>
+                    </div>
+
+                    <div class="category-box" data-category="salud">
+                        <h4>🏥 Salud y cuerpo</h4>
+                        <div class="drop-zone" data-category="salud"></div>
+                    </div>
+
+                    <div class="category-box" data-category="alimentacion">
+                        <h4>🍽️ Alimentación</h4>
+                        <div class="drop-zone" data-category="alimentacion"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-submit" onclick="checkClassification()">Verificar clasificación</button>
+            <div class="activity-summary">
+                <p id="classification-feedback"></p>
+            </div>
+        </section>
+
+        <!-- ACTIVIDAD 3 -->
+        <section class="activity" id="actividad3">
+            <div class="activity-header">
+                <h2>✅ Actividad 3 – Completa con la colocación correcta</h2>
+                <span class="timer">⏱️ 10 minutos</span>
+            </div>
+            <p class="instructions">Completa las siguientes frases eligiendo la colocación adecuada.</p>
+
+            <div class="questions-list">
+                <div class="question-item" data-question="0">
+                    <p class="question-text">1. Mi hermano __________ una promesa que no pudo cumplir.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q0" value="hizo">
+                            <span>hizo</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q0" value="dijo">
+                            <span>dijo</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q0" value="dio">
+                            <span>dio</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="1">
+                    <p class="question-text">2. El director __________ una decisión importante.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="tomó">
+                            <span>tomó</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="hizo">
+                            <span>hizo</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="puso">
+                            <span>puso</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="2">
+                    <p class="question-text">3. Siempre __________ preguntas muy difíciles.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="hace">
+                            <span>hace</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="da">
+                            <span>da</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="toma">
+                            <span>toma</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="3">
+                    <p class="question-text">4. Durante la tormenta, el árbol __________ fuego por un rayo.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="se volvió">
+                            <span>se volvió</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="se prendió">
+                            <span>se prendió</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="se hizo">
+                            <span>se hizo</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="4">
+                    <p class="question-text">5. El ponente __________ una charla muy interesante sobre lenguaje.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q4" value="dio">
+                            <span>dio</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="habló">
+                            <span>habló</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="presentó">
+                            <span>presentó</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="5">
+                    <p class="question-text">6. Ayer en el examen __________ muchos errores.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q5" value="hice">
+                            <span>hice</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="cometí">
+                            <span>cometí</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="saqué">
+                            <span>saqué</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="6">
+                    <p class="question-text">7. Cuando tengo hipo pido que __________ un susto.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q6" value="me den">
+                            <span>me den</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="me tomen">
+                            <span>me tomen</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="me hagan">
+                            <span>me hagan</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+
+                <div class="question-item" data-question="7">
+                    <p class="question-text">8. No voy a comer aquí, lo quiero para __________.</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q7" value="caminar">
+                            <span>caminar</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="andar">
+                            <span>andar</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="llevar">
+                            <span>llevar</span>
+                        </label>
+                    </div>
+                    <span class="question-feedback"></span>
+                </div>
+            </div>
+
+            <button class="btn-submit" onclick="checkActivity3()">Verificar respuestas</button>
+            <div class="activity-summary">
+                <p id="activity3-score"></p>
+            </div>
+        </section>
+
+        <!-- ACTIVIDAD 4 -->
+        <section class="activity" id="actividad4">
+            <div class="activity-header">
+                <h2>📖 Actividad 4 – Escribe tu diario</h2>
+                <span class="timer">⏱️ 30 minutos</span>
+            </div>
+            <p class="instructions">Redacta un texto breve (100-150 palabras) sobre una situación real o inventada. <strong>Debes utilizar al menos cinco colocaciones de las trabajadas anteriormente.</strong></p>
+
+            <div class="diary-editor">
+                <textarea id="diaryText" placeholder="Escribe aquí tu texto...&#10;&#10;Recuerda usar al menos 5 colocaciones de las actividades anteriores.&#10;&#10;Ejemplo: Hoy me quedé helado cuando..."></textarea>
+                
+                <div class="word-counter">
+                    <span id="wordCount">0</span> palabras
+                    <span class="separator">|</span>
+                    <span id="collocationCount">0</span> colocaciones detectadas
+                </div>
+
+                <div class="collocations-help">
+                    <h4>💡 Colocaciones que puedes usar:</h4>
+                    <div class="help-chips">
+                        <span class="help-chip">calmar la sed</span>
+                        <span class="help-chip">toca la guitarra</span>
+                        <span class="help-chip">altamente cualificado</span>
+                        <span class="help-chip">salud de hierro</span>
+                        <span class="help-chip">comida copiosa</span>
+                        <span class="help-chip">cielo de la boca</span>
+                        <span class="help-chip">mantenerse informado</span>
+                        <span class="help-chip">quedé helado</span>
+                        <span class="help-chip">tener fiebre</span>
+                        <span class="help-chip">estar bajo presión</span>
+                        <span class="help-chip">sentir vergüenza</span>
+                        <span class="help-chip">pasar frío</span>
+                        <span class="help-chip">coger una gripe</span>
+                        <span class="help-chip">tener miedo</span>
+                        <span class="help-chip">hizo una promesa</span>
+                        <span class="help-chip">tomó una decisión</span>
+                        <span class="help-chip">hace preguntas</span>
+                        <span class="help-chip">se prendió fuego</span>
+                        <span class="help-chip">dio una charla</span>
+                        <span class="help-chip">cometí errores</span>
+                        <span class="help-chip">me den un susto</span>
+                        <span class="help-chip">para llevar</span>
+                    </div>
+                </div>
+
+                <button class="btn-submit" onclick="submitDiary()">Enviar diario</button>
+                <div id="diary-feedback"></div>
+            </div>
+        </section>
+
+        <footer class="blog-footer">
+            <p>📚 Blog didáctico de ELE - Nivel B1 | Colocaciones léxicas</p>
+            <p><small>Todas las actividades se corrigen automáticamente</small></p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
